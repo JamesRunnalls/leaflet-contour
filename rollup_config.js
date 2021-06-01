@@ -12,7 +12,7 @@ const umdConf = {
 
 export default {
   // UMD
-  input: "src/leaflet_contour.js",
+  input: "src/leaflet-contour.js",
   output: [
     {
       ...umdConf,

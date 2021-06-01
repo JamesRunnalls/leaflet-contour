@@ -2,7 +2,7 @@
   "name": "leaflet-contour",
   "version": "1.0.0",
   "description": "A customisable Leaflet contour plugin. Uses d3-contour under the hood.",
-  "main": "src/leaflet_contour.js",
+  "main": "src/leaflet-contour.js",
   "unpkg": "dist/leaflet-contour.min.js",
   "scripts": {
     "build": "rollup -c \"rollup_config.js\""
