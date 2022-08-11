@@ -55,10 +55,9 @@ x: Longitude
 y: Latitude
 z: Parameter to display
 
-**Warning**
-Leaflet contour can only be used to disply gridded data, the gridded data must include geographic data beyond the real values (this means at least one layer of surrounding null values). For point data [leaflet.heat](https://github.com/Leaflet/Leaflet.heat) may be more appropriate.
+:warning: Leaflet contour can only be used to disply gridded data, the gridded data must include geographic data beyond the real values (this means at least one layer of surrounding null values). For point data [leaflet.heat](https://github.com/Leaflet/Leaflet.heat) may be more appropriate.
 
-Example reactangluar gridded data:
+Example rectangluar gridded data:
 
 |           | 8.475 | 8.5  | 8.525 | 8.55 | 8.575 | 8.6  | 8.625 |
 | --------- | ----- | ---- | ----- | ---- | ----- | ---- | ----- |
@@ -70,34 +69,34 @@ Example reactangluar gridded data:
 | **47.32** | null  | null | null  | 2    | null  | null | null  |
 | **47.3**  | null  | null | null  | null | null  | null | null  |
 
-const data = {
-x: [
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
-],
-y: [
-[47.42, 47.42, 47.42, 47.42, 47.42, 47.42, 47.42],
-[47.4, 47.4, 47.4, 47.4, 47.4, 47.4, 47.4],
-[47.38, 47.38, 47.38, 47.38, 47.38, 47.38, 47.38],
-[47.36, 47.36, 47.36, 47.36, 47.36, 47.36, 47.36],
-[47.34, 47.34, 47.34, 47.34, 47.34, 47.34, 47.34],
-[47.32, 47.32, 47.32, 47.32, 47.32, 47.32, 47.32],
-[47.3, 47.3, 47.3, 47.3, 47.3, 47.3, 47.3],
-],
-z: [
-[null, null, null, null, null, null, null],
-[null, null, null, 2, null, null, null],
-[null, null, 2, 5, 2, null, null],
-[null, 2, 5, 10, 5, 2, null],
-[null, null, 2, 5, 2, null, null],
-[null, null, null, 2, null, null, null],
-[null, null, null, null, null, null, null],
-],
+const data = {\
+x: [\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],\
+],\
+y: [\
+[47.42, 47.42, 47.42, 47.42, 47.42, 47.42, 47.42],\
+[47.4, 47.4, 47.4, 47.4, 47.4, 47.4, 47.4],\
+[47.38, 47.38, 47.38, 47.38, 47.38, 47.38, 47.38],\
+[47.36, 47.36, 47.36, 47.36, 47.36, 47.36, 47.36],\
+[47.34, 47.34, 47.34, 47.34, 47.34, 47.34, 47.34],\
+[47.32, 47.32, 47.32, 47.32, 47.32, 47.32, 47.32],\
+[47.3, 47.3, 47.3, 47.3, 47.3, 47.3, 47.3],\
+],\
+z: [\
+[null, null, null, null, null, null, null],\
+[null, null, null, 2, null, null, null],\
+[null, null, 2, 5, 2, null, null],\
+[null, 2, 5, 10, 5, 2, null],\
+[null, null, 2, 5, 2, null, null],\
+[null, null, null, 2, null, null, null],\
+[null, null, null, null, null, null, null],\
+],\
 };
 
 ### thresholds
