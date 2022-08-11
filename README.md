@@ -10,7 +10,8 @@ Grid of simulated water temperature values on Lake Geneva from the Meteolakes pr
 
 Check out the examples:
 
-- [Basic](https://jamesrunnalls.github.io/leaflet-contour/example/basic/) ([source](https://github.com/jamesrunnalls/leaflet-contour/blob/master/example/basic/index.html))
+- [Simple](https://jamesrunnalls.github.io/leaflet-contour/example/simple/) ([source](https://github.com/jamesrunnalls/leaflet-contour/blob/master/example/simple.html))
+- [Lake](https://jamesrunnalls.github.io/leaflet-contour/example/lake/) ([source](https://github.com/jamesrunnalls/leaflet-contour/blob/master/example/lake.html))
 
 ## Quick start
 
@@ -53,6 +54,51 @@ Data must be an object {x: [[]], y:[[]], z:[[]]} where x, y, z are 2D arrays of 
 x: Longitude
 y: Latitude
 z: Parameter to display
+
+**Warning**
+Leaflet contour can only be used to disply gridded data, the gridded data must include geographic data beyond the real values (this means at least one layer of surrounding null values). For point data [leaflet.heat](https://github.com/Leaflet/Leaflet.heat) may be more appropriate.
+
+Example reactangluar gridded data:
+
+|           | 8.475 | 8.5  | 8.525 | 8.55 | 8.575 | 8.6  | 8.625 |
+| --------- | ----- | ---- | ----- | ---- | ----- | ---- | ----- |
+| **47.42** | null  | null | null  | null | null  | null | null  |
+| **47.4**  | null  | null | null  | 2    | null  | null | null  |
+| **47.38** | null  | null | 2     | 5    | 2     | null | null  |
+| **47.36** | null  | 2    | 5     | 10   | 5     | 2    | null  |
+| **47.34** | null  | null | 2     | 5    | 2     | null | null  |
+| **47.32** | null  | null | null  | 2    | null  | null | null  |
+| **47.3**  | null  | null | null  | null | null  | null | null  |
+
+const data = {
+x: [
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+[8.475, 8.5, 8.525, 8.55, 8.575, 8.6, 8.625],
+],
+y: [
+[47.42, 47.42, 47.42, 47.42, 47.42, 47.42, 47.42],
+[47.4, 47.4, 47.4, 47.4, 47.4, 47.4, 47.4],
+[47.38, 47.38, 47.38, 47.38, 47.38, 47.38, 47.38],
+[47.36, 47.36, 47.36, 47.36, 47.36, 47.36, 47.36],
+[47.34, 47.34, 47.34, 47.34, 47.34, 47.34, 47.34],
+[47.32, 47.32, 47.32, 47.32, 47.32, 47.32, 47.32],
+[47.3, 47.3, 47.3, 47.3, 47.3, 47.3, 47.3],
+],
+z: [
+[null, null, null, null, null, null, null],
+[null, null, null, 2, null, null, null],
+[null, null, 2, 5, 2, null, null],
+[null, 2, 5, 10, 5, 2, null],
+[null, null, 2, 5, 2, null, null],
+[null, null, null, 2, null, null, null],
+[null, null, null, null, null, null, null],
+],
+};
 
 ### thresholds
 
